@@ -136,6 +136,11 @@
                 $combo.append('<option value="'+items[i][0]+'">'+items[i][1]+'</option>');
             }
 
+            // BUGFIX: if previous day is 31 Dec, after month selected to Feb, day field becomes empty.
+            if(value > i) {
+                value = i;
+            }
+            
             $combo.val(value);
         },
 
